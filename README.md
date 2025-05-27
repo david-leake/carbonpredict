@@ -1,0 +1,2 @@
+# carbonpredict
+carbonpredict is an open-source Python toolkit that turns everyday financial-transaction and activity data into science-grade carbon-footprint insights. It bundles curated UK-MRIO emission factors, bank-category mapping tables, spend-based calculators, hierarchical regression models (Scope 1, 2 & 3), farm-intensity predictors, and behavioural‐segmentation tools in a single, well-typed API—ready for researchers, lenders, corporates and policy teams working toward Net-Zero.
