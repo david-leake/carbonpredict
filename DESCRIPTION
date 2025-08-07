@@ -1,10 +1,10 @@
 Package: carbonpredict
 Title: Predict Carbon Emissions for SME's and Farms
-Version: 0.0.0.9000
-Authors@R: 
-    person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre"))
-    person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb"))
-    person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb"))
+Version: 0.0.1
+Authors@R: c(
+    person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
+    person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
+    person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb", "aut")))
 Description: This package uses pre-trained models to predict scope 1 and 2 carbon emissions for SME's and scope 1 emissions for farms.
 License: MIT + file LICENSE
 Encoding: UTF-8
@@ -13,7 +13,8 @@ RoxygenNote: 7.3.2
 Imports:
     dplyr,
     ggplot2,
-    progress
+    progress,
+    lmerTest
 Suggests: 
     testthat (>= 3.0.0),
     mockery
