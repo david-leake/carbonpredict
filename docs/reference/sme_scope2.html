@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
       </span>
     </div>
 
@@ -52,7 +52,7 @@
 
 
 <dl><dt id="arg-sic-code">sic_code<a class="anchor" aria-label="anchor" href="#arg-sic-code"></a></dt>
-<dd><p>A 2-digit SIC code (numeric).</p></dd>
+<dd><p>A 2-digit UK SIC code (numeric).</p></dd>
 
 
 <dt id="arg-turnover">turnover<a class="anchor" aria-label="anchor" href="#arg-turnover"></a></dt>
@@ -67,8 +67,8 @@
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">sme_scope2</span><span class="op">(</span>sic_code <span class="op">=</span> <span class="fl">85</span>, turnover <span class="op">=</span> <span class="fl">12000000</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   SIC_2_2007 lbg_turnover mac_scope2_intensity tno_1M_firms predicted_emissions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07                0.003       91.578              234891</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   SIC_2_2007 lbg_turnover predicted_emissions</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07              234891</span>
 </code></pre></div>
     </div>
   </div>

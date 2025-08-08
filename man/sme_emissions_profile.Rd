@@ -7,11 +7,11 @@
 sme_emissions_profile(sic_code, turnover, company_name = NULL)
 }
 \arguments{
-\item{sic_code}{A 2-digit SIC code (numeric).}
+\item{sic_code}{A 2-digit UK SIC code (numeric).}
 
 \item{turnover}{Annual turnover value (numeric).}
 
-\item{company_name}{Optional company name for labeling plots.}
+\item{company_name}{Optional company name for labeling plots (string).}
 }
 \value{
 A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame, as well as a donut chart.

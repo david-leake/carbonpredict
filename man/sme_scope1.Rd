@@ -7,7 +7,7 @@
 sme_scope1(sic_code, turnover)
 }
 \arguments{
-\item{sic_code}{A 2-digit SIC code (numeric).}
+\item{sic_code}{A 2-digit UK SIC code (numeric).}
 
 \item{turnover}{Annual turnover value (numeric).}
 }

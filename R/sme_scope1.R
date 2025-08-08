@@ -7,7 +7,7 @@ library(dplyr)
 #'
 #' @importFrom utils read.csv
 #' @importFrom stats predict
-#' @param sic_code A 2-digit SIC code (numeric).
+#' @param sic_code A 2-digit UK SIC code (numeric).
 #' @param turnover Annual turnover value (numeric).
 #' @return A data frame with predicted emissions and input variables.
 #' @export
@@ -49,5 +49,5 @@ sme_scope1 <- function(sic_code, turnover) {
     new_data_scope1$predicted_log_emissions <- predict(scope1_model, newdata = new_data_scope1, allow.new.levels = TRUE)
     new_data_scope1$predicted_emissions <- exp(new_data_scope1$predicted_log_emissions)
 
-    return(new_data_scope1[, c("SIC_2_2007", "lbg_turnover", "mac_scope1_intensity", "tno_1M_firms", "predicted_emissions")])
+    return(new_data_scope1[, c("SIC_2_2007", "lbg_turnover", "predicted_emissions")])
 }

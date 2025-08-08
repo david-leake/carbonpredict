@@ -52,7 +52,7 @@ plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name 
       aes(
         x = 3.5,
         y = label_pos,
-        label = paste0(label, " kgCO2")
+        label = paste0(label, " Co2e")
       ),
       size = 3,
       fontface = "bold"
@@ -70,10 +70,10 @@ plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name 
       "text",
       x = 3,  # Center of the donut
       y = 0,
-      label = paste("Total\n", format(round(total_emissions, 0), big.mark = ","), "kgCO2"),
+      label = paste("Total\n", format(round(total_emissions, 0), big.mark = ","), "Co2e"),
       size = 3,
       fontface = "bold",
       vjust = 3
     ) +
-    labs(title = chart_title, fill = "Emission Scope (kgCO2)")
+    labs(title = chart_title, fill = "Emission Scope (Co2e)")
 }

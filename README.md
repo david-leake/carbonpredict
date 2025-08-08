@@ -82,7 +82,8 @@ batch_sme_plots(data = sample_data, output_path = "temp/plots")
 
 ## Documentation
 
-Full documentation is available [here](reference/index.html) and via R
+Full documentation is available on [our GitHub Pages
+site](https://david-leake.github.io/carbonpredict/index.html) and via R
 help pages (e.g., `?sme_scope1`).
 
 ## Contributing
