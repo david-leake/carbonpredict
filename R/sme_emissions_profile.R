@@ -2,9 +2,9 @@
 #'
 #' Calls the Scope 1 and Scope 2 emissions prediction functions and returns their results as a list and plots a donut chart
 #'
-#' @param sic_code A 2-digit SIC code (numeric).
+#' @param sic_code A 2-digit UK SIC code (numeric).
 #' @param turnover Annual turnover value (numeric).
-#' @param company_name Optional company name for labeling plots.
+#' @param company_name Optional company name for labeling plots (string).
 #' @return A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame, as well as a donut chart.
 #' @export
 #' @examples
