@@ -9,12 +9,12 @@ batch_predict_emissions(data, company_type, output_path = NULL)
 \arguments{
 \item{data}{A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.}
 
-\item{company_type}{A single entry "sme" or "farm" to determine which emission prediction funtions to call.}
+\item{company_type}{A single parameter "sme" or "farm" to determine which emission prediction funtions to call.}
 
 \item{output_path}{Optional file path to save the results as a CSV. If NULL, results are not saved to a file.}
 }
 \value{
-A data frame with input columns and predicted emissions for each scope. Optionally saved to a CSV file.
+A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
 }
 \description{
 Prediction entry point for batch SME and agriculture emissions

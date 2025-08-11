@@ -1,6 +1,6 @@
 Package: carbonpredict
 Title: Predict Carbon Emissions for UK SMEs
-Version: 0.0.2
+Version: 0.0.3
 Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),

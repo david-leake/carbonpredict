@@ -9,7 +9,7 @@ library(progress)
 #' @importFrom ggplot2 ggsave
 #' @param data A data frame or path to a CSV file with columns "sic_code", "turnover", and optionally "company_name".
 #' @param output_path Optional directory to save plots. If NULL, plots are not saved.
-#' @return Donut chart plots for each row in the data. Optionally saved to a directory as PNG files.
+#' @return Donut chart plots showing scope 1 and 2 predicted emissions (in tCo2e) for each row in the data. Optionally saved to a directory as PNG files.
 #' @export
 #' @examples
 #' sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))

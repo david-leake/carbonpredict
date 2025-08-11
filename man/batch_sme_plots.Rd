@@ -12,7 +12,7 @@ batch_sme_plots(data, output_path = NULL)
 \item{output_path}{Optional directory to save plots. If NULL, plots are not saved.}
 }
 \value{
-Donut chart plots for each row in the data. Optionally saved to a directory as PNG files.
+Donut chart plots showing scope 1 and 2 predicted emissions (in tCo2e) for each row in the data. Optionally saved to a directory as PNG files.
 }
 \description{
 Batch plot SME Scope 1 & 2 emissions

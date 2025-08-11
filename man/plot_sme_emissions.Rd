@@ -7,11 +7,11 @@
 plot_sme_emissions(scope1_emissions, scope2_emissions, company_name = NULL)
 }
 \arguments{
-\item{scope1_emissions}{Numeric value for Scope 1 emissions.}
+\item{scope1_emissions}{Value for Scope 1 emissions (numeric).}
 
-\item{scope2_emissions}{Numeric value for Scope 2 emissions.}
+\item{scope2_emissions}{Value for Scope 2 emissions (numeric).}
 
-\item{company_name}{Optional character string for the company name to include in the chart title.}
+\item{company_name}{Optional company name to include in the chart title (character string).}
 }
 \value{
 A ggplot2 donut chart.

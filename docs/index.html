@@ -33,7 +33,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
       </span>
     </div>
 
@@ -71,7 +71,7 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the package from CRAN:</p>
+<p>You can install the package from CRAN <em>(coming soon!)</em>:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"carbonpredict"</span><span class="op">)</span></span></code></pre></div>
 <p>Or install the development version from GitHub:</p>
@@ -91,7 +91,8 @@
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">carbonpredict</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/sme_scope1.html">sme_scope1</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="reference/sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
+<span><span class="co"># Note: all predicted emissions values are in tonnes of Co2e (tCo2e).</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="plot-emissions-for-a-single-sme">Plot emissions for a single SME<a class="anchor" aria-label="anchor" href="#plot-emissions-for-a-single-sme"></a>
@@ -111,7 +112,7 @@
 <h3 id="batch-prediction-from-csv">Batch prediction from CSV<a class="anchor" aria-label="anchor" href="#batch-prediction-from-csv"></a>
 </h3>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Some example SME data is included in the package</span></span>
+<code class="sourceCode R"><span><span class="co"># Some sample SME data is included in the package for demonstration purposes.</span></span>
 <span><span class="va">sample_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sme_examples.csv"</span>, package <span class="op">=</span> <span class="st">"carbonpredict"</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/batch_predict_emissions.html">batch_predict_emissions</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sample_data</span>, company_type <span class="op">=</span> <span class="st">"sme"</span>, output_path <span class="op">=</span> <span class="st">"temp/results.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -126,7 +127,7 @@
 <div class="section level2">
 <h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h2>
-<p>Full documentation is available on <a href="https://david-leake.github.io/carbonpredict/index.html" class="external-link">our GitHub Pages site</a> and via R help pages (e.g., <code><a href="reference/sme_scope1.html">?sme_scope1</a></code>).</p>
+<p>Full documentation is available on <a href="https://david-leake.github.io/carbonpredict/index.html" class="external-link">our GitHub Pages site</a>, in the <a href="https://github.com/david-leake/carbonpredict/blob/main/carbonpredict_documentation.pdf" class="external-link">package manual (PDF)</a>, and via R help pages (e.g., <code><a href="reference/sme_scope1.html">?sme_scope1</a></code>).</p>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>

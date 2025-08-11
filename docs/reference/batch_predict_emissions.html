@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
       </span>
     </div>
 
@@ -56,7 +56,7 @@
 
 
 <dt id="arg-company-type">company_type<a class="anchor" aria-label="anchor" href="#arg-company-type"></a></dt>
-<dd><p>A single entry "sme" or "farm" to determine which emission prediction funtions to call.</p></dd>
+<dd><p>A single parameter "sme" or "farm" to determine which emission prediction funtions to call.</p></dd>
 
 
 <dt id="arg-output-path">output_path<a class="anchor" aria-label="anchor" href="#arg-output-path"></a></dt>
@@ -65,7 +65,7 @@
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A data frame with input columns and predicted emissions for each scope. Optionally saved to a CSV file.</p>
+    <p>A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.</p>
     </div>
 
     <div id="ref-examples">
@@ -75,9 +75,9 @@
 <span class="r-in"><span><span class="fu">batch_predict_emissions</span><span class="op">(</span>data <span class="op">=</span> <span class="va">sample_data</span>, company_type <span class="op">=</span> <span class="st">"sme"</span>, output_path <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required namespace: lmerTest</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                  company_name sic_code turnover sme_scope1 sme_scope2</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Abdur's Abnormal Algorithms       87  3098836   200826.2   91431.55</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      Ajit's Jetpack Rentals       88 20500387   454187.8  247271.83</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     Alex's Axolotl Emporium       74 13297747   111380.5   65143.19</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 Abdur's Abnormal Algorithms       87  3098836   200.8262   91.43155</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2      Ajit's Jetpack Rentals       88 20500387   454.1878  247.27183</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3     Alex's Axolotl Emporium       74 13297747   111.3805   65.14319</span>
 </code></pre></div>
     </div>
   </div>

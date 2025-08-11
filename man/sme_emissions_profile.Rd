@@ -11,10 +11,10 @@ sme_emissions_profile(sic_code, turnover, company_name = NULL)
 
 \item{turnover}{Annual turnover value (numeric).}
 
-\item{company_name}{Optional company name for labeling plots (string).}
+\item{company_name}{Optional company name for labeling plots (character string).}
 }
 \value{
-A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame, as well as a donut chart.
+A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame (in tCo2e), as well as a donut chart.
 }
 \description{
 Calls the Scope 1 and Scope 2 emissions prediction functions and returns their results as a list and plots a donut chart

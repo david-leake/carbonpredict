@@ -12,7 +12,7 @@ sme_scope2(sic_code, turnover)
 \item{turnover}{Annual turnover value (numeric).}
 }
 \value{
-A data frame with predicted emissions and input variables.
+A data frame with predicted emissions (in tCo2e) and input variables.
 }
 \description{
 This function loads a pre-trained emission model to predict scope 2 carbon emissions for a given SIC code and turnover.

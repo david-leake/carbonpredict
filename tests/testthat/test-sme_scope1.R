@@ -6,13 +6,13 @@ test_that("returns prediction for valid SIC and turnover", {
   # Replace with a real SIC code from your data
   expect_silent(result <- sme_scope1(85, 12000000))
   expect_true("predicted_emissions" %in% names(result))
-  expect_equal(result$predicted_emissions, 376646, tolerance = 1e-6)
+  expect_equal(result$predicted_emissions, 376.646, tolerance = 1e-6)
 })
 
 # Test: another valid input
 test_that("returns prediction for another valid SIC and turnover", {
   expect_silent(result <- sme_scope1(16, 500000))
-  expect_equal(result$predicted_emissions, 34272.42, tolerance = 1e-6)
+  expect_equal(result$predicted_emissions, 34.27242, tolerance = 1e-6)
 })
 
 # Test: invalid SIC code
