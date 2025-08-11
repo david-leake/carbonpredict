@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.2</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
       </span>
     </div>
 
@@ -60,12 +60,12 @@
 
 
 <dt id="arg-company-name">company_name<a class="anchor" aria-label="anchor" href="#arg-company-name"></a></dt>
-<dd><p>Optional company name for labeling plots (string).</p></dd>
+<dd><p>Optional company name for labeling plots (character string).</p></dd>
 
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list with two elements: <code>scope1</code> and <code>scope2</code>, each containing the predicted emissions data frame, as well as a donut chart.</p>
+    <p>A list with two elements: <code>scope1</code> and <code>scope2</code>, each containing the predicted emissions data frame (in tCo2e), as well as a donut chart.</p>
     </div>
 
     <div id="ref-examples">
@@ -74,11 +74,11 @@
 <span class="r-plt img"><img src="sme_emissions_profile-1.png" alt="" width="700" height="433"></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $scope1</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SIC_2_2007 lbg_turnover predicted_emissions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07              376646</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07             376.646</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $scope2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   SIC_2_2007 lbg_turnover predicted_emissions</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07              234891</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1         85      1.2e+07             234.891</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>

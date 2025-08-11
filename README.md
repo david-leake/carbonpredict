@@ -25,7 +25,7 @@ for Predicting Scope 1 and 2 Emissions. Journal of Industrial Ecology.
 
 ## Installation
 
-You can install the package from CRAN:
+You can install the package from CRAN *(coming soon!)*:
 
 ``` r
 install.packages("carbonpredict")
@@ -49,6 +49,7 @@ devtools::install_local("carbonpredict")
 library(carbonpredict)
 sme_scope1(85, 12000000)
 sme_scope2(85, 12000000)
+# Note: all predicted emissions values are in tonnes of Co2e (tCo2e).
 ```
 
 ### Plot emissions for a single SME
@@ -68,7 +69,7 @@ sme_emissions_profile(85, 12000000, "Carbon Predict LTD")
 ### Batch prediction from CSV
 
 ``` r
-# Some example SME data is included in the package
+# Some sample SME data is included in the package for demonstration purposes.
 sample_data <- system.file("extdata", "sme_examples.csv", package = "carbonpredict")
 results <- batch_predict_emissions(data = sample_data, company_type = "sme", output_path = "temp/results.csv")
 ```
@@ -83,8 +84,10 @@ batch_sme_plots(data = sample_data, output_path = "temp/plots")
 ## Documentation
 
 Full documentation is available on [our GitHub Pages
-site](https://david-leake.github.io/carbonpredict/index.html) and via R
-help pages (e.g., `?sme_scope1`).
+site](https://david-leake.github.io/carbonpredict/index.html), in the
+[package manual
+(PDF)](https://github.com/david-leake/carbonpredict/blob/main/carbonpredict_documentation.pdf),
+and via R help pages (e.g., `?sme_scope1`).
 
 ## Contributing
 
