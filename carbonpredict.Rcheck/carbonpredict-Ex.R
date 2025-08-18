@@ -54,7 +54,10 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
 sample_data <- head(sample_data, 3)
-batch_sme_emissions <- batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
+batch_sme_emissions <- batch_predict_emissions(
+data = sample_data,
+company_type = "sme",
+output_path = NULL)
 batch_sme_plots(data = batch_sme_emissions, output_path = NULL)
 
 
@@ -76,7 +79,10 @@ base::assign(".ptime", proc.time(), pos = "CheckExEnv")
 
 scope_1 = sme_scope1(85, 12000000)
 scope_2 = sme_scope2(85, 12000000)
-plot_sme_emissions(scope1_emissions = scope_1$predicted_emissions, scope2_emissions = scope_2$predicted_emissions, company_name = "ABC")
+plot_sme_emissions(
+scope1_emissions = scope_1$predicted_emissions,
+scope2_emissions = scope_2$predicted_emissions,
+company_name = "ABC")
 
 
 

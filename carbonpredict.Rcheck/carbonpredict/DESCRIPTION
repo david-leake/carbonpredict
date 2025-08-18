@@ -5,7 +5,7 @@ Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
     person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb", "aut")))
-Description: This package uses pre-trained models to predict scope 1 and 2 carbon emissions for SMEs.
+Description: Carbon Predict uses pre-trained models to predict scope 1 and 2 carbon emissions for SMEs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -14,10 +14,10 @@ Imports: dplyr, ggplot2, progress, lmerTest
 Suggests: testthat (>= 3.0.0), mockery
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2025-08-18 09:39:46 UTC; Hamza
+Packaged: 2025-08-18 10:07:49 UTC; Hamza
 Author: Hamza Suleman [aut, cre, cph],
   Alec Phillpotts [ctb, aut],
   David Leake [ctb, aut]
 Maintainer: Hamza Suleman <Hamza.Suleman@lloydsbanking.com>
 Depends: R (>= 3.5.0)
-Built: R 4.5.1; ; 2025-08-18 09:43:32 UTC; windows
+Built: R 4.5.1; ; 2025-08-18 10:08:12 UTC; windows

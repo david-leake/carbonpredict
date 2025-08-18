@@ -5,7 +5,7 @@ Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
     person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb", "aut")))
-Description: Carbonpredict uses pre-trained models to predict scope 1 and 2 carbon emissions for SMEs.
+Description: Carbon Predict uses pre-trained models to predict scope 1 and 2 carbon emissions for SMEs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

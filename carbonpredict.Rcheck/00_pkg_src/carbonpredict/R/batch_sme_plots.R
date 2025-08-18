@@ -14,7 +14,10 @@ library(progress)
 #' @examples
 #' sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
 #' sample_data <- head(sample_data, 3)
-#' batch_sme_emissions <- batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
+#' batch_sme_emissions <- batch_predict_emissions(
+#' data = sample_data,
+#' company_type = "sme",
+#' output_path = NULL)
 #' batch_sme_plots(data = batch_sme_emissions, output_path = NULL)
 batch_sme_plots <- function(data, output_path = NULL) {
   if (is.character(data) && length(data) == 1 && file.exists(data)) {

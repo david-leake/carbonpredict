@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.11)  18 AUG 2025 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.8.11)  18 AUG 2025 11:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**C:/Users/Hamza/AppData/Local/Temp/Rtmp2NOT2C/Rd2pdf2f00306948b0/Rd2.tex
-(C:/Users/Hamza/AppData/Local/Temp/Rtmp2NOT2C/Rd2pdf2f00306948b0/Rd2.tex
+**C:/Users/Hamza/AppData/Local/Temp/RtmpWyM6Ps/Rd2pdf3ed85c142645/Rd2.tex
+(C:/Users/Hamza/AppData/Local/Temp/RtmpWyM6Ps/Rd2pdf3ed85c142645/Rd2.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
 
@@ -452,18 +452,6 @@ Overfull \hbox (18.76248pt too wide) in paragraph at lines 95--95
 sv", package = "carbonpredict")) 
  []
 
-
-Overfull \hbox (75.75021pt too wide) in paragraph at lines 97--97
- []\T1/zi4/m/n/9 batch_sme_emissions <- batch_predict_emissions(data = sample_d
-ata, company_type = "sme", output_path = NULL)[] 
- []
-
-
-Overfull \hbox (204.75635pt too wide) in paragraph at lines 131--131
- []\T1/zi4/m/n/9 plot_sme_emissions(scope1_emissions = scope_1$predicted_emissi
-ons, scope2_emissions = scope_2$predicted_emissions, company_name = "ABC")[] 
- []
-
 [3] [4] (Rd2.ind [5] [6
 
 
@@ -482,14 +470,14 @@ Here is how much of TeX's memory you used:
  32621 multiletter control sequences out of 15000+600000
  591622 words of font info for 78 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 92i,5n,95p,322b,702s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 92i,5n,95p,322b,703s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Hamza/AppData/Local/Programs/MiKTeX/fonts/type1/public/inconsolata/
 Inconsolata-zi4r.pfb><C:/Users/Hamza/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/times/utmb8a.pfb><C:/Users/Hamza/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Users/Hamza/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/times/utmr8a.pfb><C:/Users/Hamza/AppData/Local/Programs/MiKTeX/fonts/type1/
 urw/times/utmri8a.pfb>
-Output written on Rd2.pdf (6 pages, 94433 bytes).
+Output written on Rd2.pdf (6 pages, 94448 bytes).
 PDF statistics:
  149 PDF objects out of 1000 (max. 8388607)
  52 named destinations out of 1000 (max. 500000)
