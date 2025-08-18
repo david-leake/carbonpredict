@@ -1,0 +1,7 @@
+Hmm ... looks like a package
+Converting parsed Rd's to LaTeX 
+Creating pdf output from LaTeX ...
+texify: major issue: So far, you have not checked for MiKTeX updates.
+Saving output to 'carbonpredict-manual.pdf' ...
+Done
+You may want to clean up by 'rm -Rf C:/Users/Hamza/AppData/Local/Temp/Rtmp2NOT2C/Rd2pdf2f00306948b0'

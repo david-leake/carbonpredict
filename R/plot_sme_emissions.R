@@ -20,7 +20,10 @@ library(dplyr)
 #' @examples
 #' scope_1 = sme_scope1(85, 12000000)
 #' scope_2 = sme_scope2(85, 12000000)
-#' plot_sme_emissions(scope1_emissions = scope_1$predicted_emissions, scope2_emissions = scope_2$predicted_emissions, company_name = "ABC")
+#' plot_sme_emissions(
+#' scope1_emissions = scope_1$predicted_emissions,
+#' scope2_emissions = scope_2$predicted_emissions,
+#' company_name = "ABC")
 plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name = NULL) {
 
   emissions <- data.frame(

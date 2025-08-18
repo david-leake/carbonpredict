@@ -1,0 +1,7 @@
+name	user	system	elapsed
+batch_predict_emissions	0.47	0.08	0.53	
+batch_sme_plots	1.08	0.02	1.13	
+plot_sme_emissions	0.37	0.03	0.40	
+sme_emissions_profile	0.38	0.00	0.37	
+sme_scope1	0.11	0.01	0.11	
+sme_scope2	0.12	0.03	0.15	

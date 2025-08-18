@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.3</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.4</span>
       </span>
     </div>
 
@@ -72,7 +72,10 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">scope_1</span> <span class="op">=</span> <span class="fu"><a href="sme_scope1.html">sme_scope1</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">scope_2</span> <span class="op">=</span> <span class="fu"><a href="sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">plot_sme_emissions</span><span class="op">(</span>scope1_emissions <span class="op">=</span> <span class="va">scope_1</span><span class="op">$</span><span class="va">predicted_emissions</span>, scope2_emissions <span class="op">=</span> <span class="va">scope_2</span><span class="op">$</span><span class="va">predicted_emissions</span>, company_name <span class="op">=</span> <span class="st">"ABC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">plot_sme_emissions</span><span class="op">(</span></span></span>
+<span class="r-in"><span>scope1_emissions <span class="op">=</span> <span class="va">scope_1</span><span class="op">$</span><span class="va">predicted_emissions</span>,</span></span>
+<span class="r-in"><span>scope2_emissions <span class="op">=</span> <span class="va">scope_2</span><span class="op">$</span><span class="va">predicted_emissions</span>,</span></span>
+<span class="r-in"><span>company_name <span class="op">=</span> <span class="st">"ABC"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot_sme_emissions-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
