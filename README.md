@@ -21,7 +21,6 @@ detailed in the following peer-reviewed publication:
 Phillpotts, A., Owen. A., Norman, J., Trendl, A., Gathergood, J., Jobst,
 Norbert., Leake, D., 2025. Bridging the SME Reporting Gap: A New Model
 for Predicting Scope 1 and 2 Emissions. Journal of Industrial Ecology.
-<https://doi.org/>
 
 ## Installation
 
