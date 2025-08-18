@@ -1,2 +1,6 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^carbonpredict_documentation\.pdf$
+^README\.Rmd$
+^LICENSE\.md$
+^docs$
