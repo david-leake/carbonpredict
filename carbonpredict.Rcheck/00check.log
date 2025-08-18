@@ -10,7 +10,7 @@
 * checking for file 'carbonpredict/DESCRIPTION' ... OK
 * this is package 'carbonpredict' version '0.0.4'
 * package encoding: UTF-8
-* checking CRAN incoming feasibility ... NOTE
+* checking CRAN incoming feasibility ... [11s] NOTE
 Maintainer: 'Hamza Suleman <Hamza.Suleman@lloydsbanking.com>'
 
 New submission
@@ -29,7 +29,8 @@ Size of tarball: 10450792 bytes
   sub-directories of 1Mb or more:
     models  10.7Mb
 * checking package directory ... OK
-* checking for future file timestamps ... OK
+* checking for future file timestamps ... NOTE
+unable to verify current time
 * checking DESCRIPTION meta-information ... OK
 * checking top-level files ... NOTE
 Files 'README.md' or 'NEWS.md' cannot be checked without 'pandoc' being installed.
@@ -70,4 +71,4 @@ Non-standard files/directories found at top level:
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 2 NOTEs
+Status: 3 NOTEs
