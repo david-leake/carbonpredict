@@ -1,11 +1,11 @@
 Package: carbonpredict
 Title: Predict Carbon Emissions for UK SMEs
-Version: 0.0.4
+Version: 0.0.5
 Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
     person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb", "aut")))
-Description: Carbon Predict uses pre-trained models to predict scope 1 and 2 carbon emissions for SMEs.
+Description: Predict scope 1 and 2 carbon emissions using pretrained models for UK SMEs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -14,7 +14,7 @@ Imports: dplyr, ggplot2, progress, lmerTest
 Suggests: testthat (>= 3.0.0), mockery
 Config/testthat/edition: 3
 NeedsCompilation: no
-Packaged: 2025-08-18 10:07:49 UTC; Hamza
+Packaged: 2025-08-18 12:07:10 UTC; Hamza
 Author: Hamza Suleman [aut, cre, cph],
   Alec Phillpotts [ctb, aut],
   David Leake [ctb, aut]
