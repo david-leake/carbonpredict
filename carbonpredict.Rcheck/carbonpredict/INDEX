@@ -1,7 +1,0 @@
-batch_predict_emissions
-                        Batch Predict Emissions
-batch_sme_plots         Batch SME Plots
-plot_sme_emissions      Plot SME Emissions
-sme_emissions_profile   SME Emissions Profile
-sme_scope1              Predict SME Scope 1 Emissions
-sme_scope2              Predict SME Scope 2 Emissions

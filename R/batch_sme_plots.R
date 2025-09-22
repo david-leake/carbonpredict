@@ -9,15 +9,12 @@ library(progress)
 #' @importFrom ggplot2 ggsave
 #' @param data A data frame or path to a CSV file with columns "sic_code", "turnover", and optionally "company_name".
 #' @param output_path Optional directory to save plots. If NULL, plots are not saved.
-#' @return Donut chart plots showing scope 1 and 2 predicted emissions (in tCo2e) for each row in the data. Optionally saved to a directory as PNG files.
+#' @return Donut chart plots for each row in the data. Optionally saved to a directory as PNG files.
 #' @export
 #' @examples
 #' sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
 #' sample_data <- head(sample_data, 3)
-#' batch_sme_emissions <- batch_predict_emissions(
-#' data = sample_data,
-#' company_type = "sme",
-#' output_path = NULL)
+#' batch_sme_emissions <- batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
 #' batch_sme_plots(data = batch_sme_emissions, output_path = NULL)
 batch_sme_plots <- function(data, output_path = NULL) {
   if (is.character(data) && length(data) == 1 && file.exists(data)) {

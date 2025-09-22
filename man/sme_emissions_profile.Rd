@@ -7,14 +7,14 @@
 sme_emissions_profile(sic_code, turnover, company_name = NULL)
 }
 \arguments{
-\item{sic_code}{A 2-digit UK SIC code (numeric).}
+\item{sic_code}{A 2-digit SIC code (numeric).}
 
 \item{turnover}{Annual turnover value (numeric).}
 
-\item{company_name}{Optional company name for labeling plots (character string).}
+\item{company_name}{Optional company name for labeling plots.}
 }
 \value{
-A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame (in tCo2e), as well as a donut chart.
+A list with two elements: \code{scope1} and \code{scope2}, each containing the predicted emissions data frame, as well as a donut chart.
 }
 \description{
 Calls the Scope 1 and Scope 2 emissions prediction functions and returns their results as a list and plots a donut chart

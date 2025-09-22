@@ -7,9 +7,9 @@ library(progress)
 
 #' @importFrom utils read.csv write.csv
 #' @param data A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.
-#' @param company_type A single parameter "sme" or "farm" to determine which emission prediction funtions to call.
+#' @param company_type A single entry "sme" or "farm" to determine which emission prediction funtions to call.
 #' @param output_path Optional file path to save the results as a CSV. If NULL, results are not saved to a file.
-#' @return A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
+#' @return A data frame with input columns and predicted emissions for each scope. Optionally saved to a CSV file.
 #' @export
 #' @examples
 #' sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
