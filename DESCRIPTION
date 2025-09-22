@@ -1,6 +1,6 @@
 Package: carbonpredict
 Title: Predict Carbon Emissions for UK SMEs
-Version: 0.0.6
+Version: 1.0.0
 Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
@@ -18,5 +18,7 @@ Imports:
     networkD3
 Suggests: 
     testthat (>= 3.0.0),
-    mockery
+    mockery,
+    png,
+    grid
 Config/testthat/edition: 3

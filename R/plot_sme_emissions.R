@@ -12,9 +12,9 @@ library(dplyr)
 #' @importFrom dplyr mutate %>%
 #' @importFrom utils head
 #' @importFrom ggplot2 ggplot aes geom_rect scale_fill_manual geom_text coord_polar xlim theme_void theme element_rect element_text annotate labs
-#' @param scope1_emissions Value for Scope 1 emissions (numeric).
-#' @param scope2_emissions Value for Scope 2 emissions (numeric).
-#' @param scope3_emissions Value for Scope 3 emissions (numeric).
+#' @param scope1_emissions Value for total Scope 1 emissions (numeric).
+#' @param scope2_emissions Value for total Scope 2 emissions (numeric).
+#' @param scope3_emissions Value for total Scope 3 emissions (numeric).
 #' @param company_name Optional company name to include in the chart title (character string).
 #' @return A ggplot2 donut chart showing predicted emissions for each scope.
 #' @export
@@ -23,9 +23,9 @@ library(dplyr)
 #' scope_2 = sme_scope2(85, 12000000)
 #' scope_3 = sme_scope3(85, 12000000)
 #' plot_sme_emissions(
-#' scope1_emissions = scope_1$predicted_emissions,
-#' scope2_emissions = scope_2$predicted_emissions,
-#' scope3_emissions = scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]]
+#' scope1_emissions = scope_1$`Predicted Emissions (tCO2e)`,
+#' scope2_emissions = scope_2$`Predicted Emissions (tCO2e)`,
+#' scope3_emissions = scope_3[scope_3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]],
 #' company_name = "ABC")
 plot_sme_emissions <- function(scope1_emissions, scope2_emissions, scope3_emissions, company_name = NULL) {
 

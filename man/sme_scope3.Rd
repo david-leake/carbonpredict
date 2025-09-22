@@ -15,7 +15,7 @@ sme_scope3(sic_code, turnover)
 A data frame with predicted emissions (in tCo2e) for each scope 3 category.
 }
 \description{
-This function loads a pre-trained emission model to predict scope 3 carbon emissions for a given SIC code and turnover.
+This function loads pre-trained emissions models to predict scope 3 carbon emissions for a given SIC code and turnover.
 }
 \examples{
 sme_scope3(sic_code = 85, turnover = 12000000)

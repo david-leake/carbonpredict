@@ -12,7 +12,7 @@ plot_scope3_emissions(scope3_df, company_name = NULL)
 \item{company_name}{Optional company name to include in the chart title (character string).}
 }
 \value{
-A networkD3 Sankey plot showing a breakdown for predicted emissions of each Scope 3 category.
+A Sankey plot showing a breakdown for predicted emissions of each Scope 3 category.
 }
 \description{
 Plots a Sankey diagram showing the breakdown of Scope 3 emissions by category.

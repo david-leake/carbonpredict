@@ -4,7 +4,7 @@ library(ggplot2)
 
 #' Predict SME Scope 3 Emissions
 #'
-#' This function loads a pre-trained emission model to predict scope 3 carbon emissions for a given SIC code and turnover.
+#' This function loads pre-trained emissions models to predict scope 3 carbon emissions for a given SIC code and turnover.
 #'
 #' @importFrom utils read.csv
 #' @importFrom stats predict
