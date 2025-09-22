@@ -1,19 +1,31 @@
 library(testthat)
 library(carbonpredict)
 
-# Test: valid SIC code and turnover
-test_that("returns prediction for valid SIC and turnover", {
-  # Replace with a real SIC code from your data
-  expect_silent(result <- sme_scope2(85, 12000000))
-  expect_true("predicted_emissions" %in% names(result))
-  expect_equal(result$predicted_emissions, 234891, tolerance = 1e-6)
+# Load validation data
+validation_data <- read.csv(
+  system.file("intdata", "validation_data.csv", package = "carbonpredict"),
+  stringsAsFactors = FALSE
+)
+
+# Test: sme_scope2 predictions match expected values in validation sample
+test_that("sme_scope2 predictions match expected values", {
+  n <- nrow(validation_data)
+  for (i in seq_len(n)) {
+    sic_code <- validation_data$SIC_2_2007[i]
+    turnover <- validation_data$lbg_turnover[i]
+
+    scope2_pred <- sme_scope2(sic_code, turnover)
+    expected_value <- as.numeric(validation_data$predicted_scope2[i] / 1000) # convert kg to t
+    expected_value <- round(expected_value, 2) # round to 2 decimal places
+    expect_equal(
+      as.numeric(scope2_pred[["Predicted Emissions (tCO2e)"]]),
+      expected_value,
+      tolerance = 0.01
+    )
+  }
 })
 
-# Test: another valid input
-test_that("returns prediction for another valid SIC and turnover", {
-  expect_silent(result <- sme_scope2(16, 500000))
-  expect_equal(result$predicted_emissions, 8184.818, tolerance = 1e-6)
-})
+## Error handling tests
 
 # Test: invalid SIC code
 test_that("errors for invalid SIC code", {

@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">carbonpredict</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.5</span>
       </span>
     </div>
 
@@ -52,15 +52,15 @@
 
 
 <dl><dt id="arg-scope-emissions">scope1_emissions<a class="anchor" aria-label="anchor" href="#arg-scope-emissions"></a></dt>
-<dd><p>Numeric value for Scope 1 emissions.</p></dd>
+<dd><p>Value for Scope 1 emissions (numeric).</p></dd>
 
 
 <dt id="arg-scope-emissions">scope2_emissions<a class="anchor" aria-label="anchor" href="#arg-scope-emissions"></a></dt>
-<dd><p>Numeric value for Scope 2 emissions.</p></dd>
+<dd><p>Value for Scope 2 emissions (numeric).</p></dd>
 
 
 <dt id="arg-company-name">company_name<a class="anchor" aria-label="anchor" href="#arg-company-name"></a></dt>
-<dd><p>Optional character string for the company name to include in the chart title.</p></dd>
+<dd><p>Optional company name to include in the chart title (character string).</p></dd>
 
 </dl></div>
     <div id="value">
@@ -72,7 +72,10 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">scope_1</span> <span class="op">=</span> <span class="fu"><a href="sme_scope1.html">sme_scope1</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="va">scope_2</span> <span class="op">=</span> <span class="fu"><a href="sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">plot_sme_emissions</span><span class="op">(</span>scope1_emissions <span class="op">=</span> <span class="va">scope_1</span><span class="op">$</span><span class="va">predicted_emissions</span>, scope2_emissions <span class="op">=</span> <span class="va">scope_2</span><span class="op">$</span><span class="va">predicted_emissions</span>, company_name <span class="op">=</span> <span class="st">"ABC"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">plot_sme_emissions</span><span class="op">(</span></span></span>
+<span class="r-in"><span>scope1_emissions <span class="op">=</span> <span class="va">scope_1</span><span class="op">$</span><span class="va">predicted_emissions</span>,</span></span>
+<span class="r-in"><span>scope2_emissions <span class="op">=</span> <span class="va">scope_2</span><span class="op">$</span><span class="va">predicted_emissions</span>,</span></span>
+<span class="r-in"><span>company_name <span class="op">=</span> <span class="st">"ABC"</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="plot_sme_emissions-1.png" alt="" width="700" height="433"></span>
 </code></pre></div>
     </div>
@@ -84,7 +87,7 @@
 
 
       <footer><div class="copyright">
-  <p></p><p>Developed by Hamza Suleman.</p>
+  <p></p><p>Developed by Hamza Suleman, Alec Phillpotts, David Leake.</p>
 </div>
 
 <div class="pkgdown">

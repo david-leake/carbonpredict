@@ -8,14 +8,14 @@ sme_data <- data.frame(sic_code = "12345", turnover = 100000)
 # Test: SME batch prediction returns expected columns
 test_that("SME batch prediction returns expected columns", {
   res <- batch_predict_emissions(sme_data, company_type = "sme")
-  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2") %in% colnames(res)))
+  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2", "sme_scope3") %in% colnames(res)))
   expect_equal(nrow(res), 1)
 })
 
 # Test: SME batch prediction works with list input
 test_that("SME batch prediction works with list input", {
   res <- batch_predict_emissions(list(sic_code = "12345", turnover = 100000), company_type = "sme")
-  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2") %in% colnames(res)))
+  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2", "sme_scope3") %in% colnames(res)))
 })
 
 # Test: Error for missing columns
@@ -41,7 +41,7 @@ test_that("loads CSV file in batch_predict_emissions", {
   df <- data.frame(sic_code = c("85", "10"), turnover = c(12000000, 5000000))
   write.csv(df, tmp_csv, row.names = FALSE)
   res <- batch_predict_emissions(tmp_csv, company_type = "sme")
-  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2") %in% colnames(res)))
+  expect_true(all(c("sic_code", "turnover", "sme_scope1", "sme_scope2", "sme_scope3") %in% colnames(res)))
   expect_equal(nrow(res), 2)
   unlink(tmp_csv)
 })
@@ -55,12 +55,15 @@ test_that("writes CSV output", {
   unlink(tmp_csv)
 })
 
-# Test: handles predicted emissions list output
-test_that("handles predicted emissions list output", {
-  stub(batch_predict_emissions, "sme_scope1", function(sic, turnover) list(predicted_emissions = 12345))
-  stub(batch_predict_emissions, "sme_scope2", function(sic, turnover) 67890)
+# Test: calls all three scope functions
+test_that("calls all three scope functions", {
+  called <- list(scope1 = FALSE, scope2 = FALSE, scope3 = FALSE)
+  stub(batch_predict_emissions, "sme_scope1", function(sic, turnover) { called$scope1 <<- TRUE; list(`Predicted Emissions (tCO2e)` = 12345) })
+  stub(batch_predict_emissions, "sme_scope2", function(sic, turnover) { called$scope2 <<- TRUE; list(`Predicted Emissions (tCO2e)` = 67890) })
+  stub(batch_predict_emissions, "sme_scope3", function(sic, turnover) { called$scope3 <<- TRUE; data.frame(Category = "Total", `Predicted Emissions (tCO2e)` = 11111, stringsAsFactors = FALSE) })
   df <- data.frame(sic_code = "85", turnover = 12000000)
-  res <- batch_predict_emissions(df, company_type = "sme")
-  expect_equal(res$sme_scope1, 12345)
-  expect_equal(res$sme_scope2, 67890)
+  batch_predict_emissions(df, company_type = "sme")
+  expect_true(called$scope1)
+  expect_true(called$scope2)
+  expect_true(called$scope3)
 })

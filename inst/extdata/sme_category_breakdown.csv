@@ -1,0 +1,14 @@
+category,services,manufacturing,descriptions
+1,0.086201614,0.152281845,Purchased Goods and Services
+2,0.087703945,0.114753872,Capital Goods
+3,NA,NA,Fuel and Energy-Related Activities
+4,0.027822942,0.011478419,Upstream Transportation and Distribution
+5,0.003966234,0.000374827,Waste Generated in Operations
+6,0.010022041,0.000256437,Business Travel
+7,0.047763502,0.000368022,Employee Commuting
+8,0.002997675,0.002198602,Upstream Leased Assets
+9,0.041973905,0.001366684,Downstream Transportation and Distribution
+10,0.004198602,0.142305752,Processing of Sold Products
+11,0.626760521,0.54393864,Use of Sold Products
+12,0.006301632,0.022894475,End-of-Life Treatment of Sold Products
+13,0.054287388,0.007782425,Downstream Leased Assets

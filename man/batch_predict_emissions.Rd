@@ -4,17 +4,17 @@
 \alias{batch_predict_emissions}
 \title{Batch Predict Emissions}
 \usage{
-batch_predict_emissions(data, company_type, output_path = NULL)
+batch_predict_emissions(data, output_path = NULL, company_type = "sme")
 }
 \arguments{
 \item{data}{A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.}
 
-\item{company_type}{A single entry "sme" or "farm" to determine which emission prediction funtions to call.}
-
 \item{output_path}{Optional file path to save the results as a CSV. If NULL, results are not saved to a file.}
+
+\item{company_type}{A single parameter "sme" or "farm" to determine which emission prediction funtions to call (defaults to "sme").}
 }
 \value{
-A data frame with input columns and predicted emissions for each scope. Optionally saved to a CSV file.
+A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
 }
 \description{
 Prediction entry point for batch SME and agriculture emissions
@@ -22,5 +22,5 @@ Prediction entry point for batch SME and agriculture emissions
 \examples{
 sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
 sample_data <- head(sample_data, 3)
-batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
+batch_predict_emissions(data = sample_data, output_path = NULL, company_type = "sme")
 }

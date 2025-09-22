@@ -6,6 +6,7 @@ library(mockery)
 sme_data <- data.frame(
   sme_scope1 = c(1000, 2000),
   sme_scope2 = c(1500, 2500),
+  sme_scope3 = c(3000, 4000),
   company_name = c("Alpha", "Beta")
 )
 
@@ -21,7 +22,7 @@ test_that("runs silently and calls plot_sme_emissions for each row", {
 # Test: errors for missing columns
 test_that("errors for missing columns", {
   bad_data <- data.frame(foo = 1, bar = 2)
-  expect_error(batch_sme_plots(bad_data), "Input must have columns 'sme_scope1' and 'sme_scope2' with precomputed emissions")
+  expect_error(batch_sme_plots(bad_data), "Input must have columns 'sme_scope1', 'sme_scope2', and 'sme_scope3' with precomputed emissions")
 })
 
 # Test: creates output directory and saves plots

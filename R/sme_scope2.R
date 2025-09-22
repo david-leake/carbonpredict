@@ -7,9 +7,10 @@ library(dplyr)
 #'
 #' @importFrom utils read.csv
 #' @importFrom stats predict
-#' @param sic_code A 2-digit SIC code (numeric).
+#' @importFrom lmerTest lmer
+#' @param sic_code A 2-digit UK SIC code (numeric).
 #' @param turnover Annual turnover value (numeric).
-#' @return A data frame with predicted emissions and input variables.
+#' @return A data frame with predicted emissions (in tCo2e).
 #' @export
 #' @examples
 #' sme_scope2(sic_code = 85, turnover = 12000000)
@@ -21,7 +22,7 @@ sme_scope2 <- function(sic_code, turnover) {
     # Read industry variables from CSV
     industry_variables <- read.csv(system.file("extdata", "industry_variables.csv", package = "carbonpredict"), stringsAsFactors = FALSE)
 
-    # Check user input
+    # Check input
     if (!(sic_code %in% industry_variables$sic_code)) {
         stop("Please provide a valid 2-digit SIC code")
     }
@@ -47,7 +48,12 @@ sme_scope2 <- function(sic_code, turnover) {
 
     # Predict emissions using model's predict() function
     new_data_scope2$predicted_log_emissions <- predict(scope2_model, newdata = new_data_scope2, allow.new.levels = TRUE)
-    new_data_scope2$predicted_emissions <- exp(new_data_scope2$predicted_log_emissions)
+    new_data_scope2$predicted_emissions <- exp(new_data_scope2$predicted_log_emissions) / 1000  # Convert predicted emissions to tCo2e
 
-    return(new_data_scope2[, c("SIC_2_2007", "lbg_turnover", "mac_scope2_intensity", "tno_1M_firms", "predicted_emissions")])
+    results <- data.frame(
+        "Predicted Emissions (tCO2e)" = round(new_data_scope2$predicted_emissions, 2),
+        check.names = FALSE
+    )
+
+    return(results)
 }

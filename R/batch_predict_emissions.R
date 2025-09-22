@@ -7,15 +7,15 @@ library(progress)
 
 #' @importFrom utils read.csv write.csv
 #' @param data A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.
-#' @param company_type A single entry "sme" or "farm" to determine which emission prediction funtions to call.
 #' @param output_path Optional file path to save the results as a CSV. If NULL, results are not saved to a file.
-#' @return A data frame with input columns and predicted emissions for each scope. Optionally saved to a CSV file.
+#' @param company_type A single parameter "sme" or "farm" to determine which emission prediction funtions to call (defaults to "sme").
+#' @return A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
 #' @export
 #' @examples
 #' sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
 #' sample_data <- head(sample_data, 3)
-#' batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
-batch_predict_emissions <- function(data, company_type, output_path = NULL) {
+#' batch_predict_emissions(data = sample_data, output_path = NULL, company_type = "sme")
+batch_predict_emissions <- function(data, output_path = NULL, company_type = "sme") {
 
   # Handle input types
   if (is.character(data) && length(data) == 1 && file.exists(data)) {
@@ -29,7 +29,7 @@ batch_predict_emissions <- function(data, company_type, output_path = NULL) {
   }
 
   if (company_type == "sme") {
-    emission_functions <- c("sme_scope1", "sme_scope2") # , "sme_scope3")
+    emission_functions <- c("sme_scope1", "sme_scope2", "sme_scope3")
   } else if (company_type == "farm") {
     # emission_functions <- c("agri_scope1")
     stop("Agriculture emissions predictions coming soon!")
@@ -48,8 +48,18 @@ batch_predict_emissions <- function(data, company_type, output_path = NULL) {
     res <- as.list(row)
     for (fn in emission_functions) {
       pred <- tryCatch({
-        out <- get(fn)(row$sic_code, row$turnover)
-        if ("predicted_emissions" %in% names(out)) as.numeric(out$predicted_emissions[[1]]) else as.numeric(out)
+        if (fn == "sme_scope3") {
+          scope3 <- get(fn)(row$sic_code, row$turnover)
+          val <- NA
+          if (is.data.frame(scope3) && "Category" %in% names(scope3) && any(scope3$Category == "Total")) {
+            val <- scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"]
+            if (length(val) > 0) val <- as.numeric(val[[1]])
+          }
+          val
+        } else {
+          out <- get(fn)(row$sic_code, row$turnover)
+          if ("Predicted Emissions (tCO2e)" %in% names(out)) as.numeric(out[["Predicted Emissions (tCO2e)"]][[1]]) else as.numeric(out)
+        }
       }, error = function(e) NA)
       res[[fn]] <- pred
     }

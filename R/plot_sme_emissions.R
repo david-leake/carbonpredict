@@ -7,25 +7,31 @@ library(dplyr)
 
 #' Plot SME Emissions
 #'
-#' Plot a donut chart of Scope 1 and Scope 2 emissions
+#' Plot a donut chart of Scope 1,2 and 3 emissions
 #'
 #' @importFrom dplyr mutate %>%
 #' @importFrom utils head
 #' @importFrom ggplot2 ggplot aes geom_rect scale_fill_manual geom_text coord_polar xlim theme_void theme element_rect element_text annotate labs
-#' @param scope1_emissions Numeric value for Scope 1 emissions.
-#' @param scope2_emissions Numeric value for Scope 2 emissions.
-#' @param company_name Optional character string for the company name to include in the chart title.
-#' @return A ggplot2 donut chart.
+#' @param scope1_emissions Value for Scope 1 emissions (numeric).
+#' @param scope2_emissions Value for Scope 2 emissions (numeric).
+#' @param scope3_emissions Value for Scope 3 emissions (numeric).
+#' @param company_name Optional company name to include in the chart title (character string).
+#' @return A ggplot2 donut chart showing predicted emissions for each scope.
 #' @export
 #' @examples
 #' scope_1 = sme_scope1(85, 12000000)
 #' scope_2 = sme_scope2(85, 12000000)
-#' plot_sme_emissions(scope1_emissions = scope_1$predicted_emissions, scope2_emissions = scope_2$predicted_emissions, company_name = "ABC")
-plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name = NULL) {
+#' scope_3 = sme_scope3(85, 12000000)
+#' plot_sme_emissions(
+#' scope1_emissions = scope_1$predicted_emissions,
+#' scope2_emissions = scope_2$predicted_emissions,
+#' scope3_emissions = scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]]
+#' company_name = "ABC")
+plot_sme_emissions <- function(scope1_emissions, scope2_emissions, scope3_emissions, company_name = NULL) {
 
   emissions <- data.frame(
-    Scope = c("Scope 1", "Scope 2"),
-    Emissions = c(as.numeric(scope1_emissions), as.numeric(scope2_emissions))
+    Scope = c("Scope 1", "Scope 2", "Scope 3"),
+    Emissions = c(as.numeric(scope1_emissions), as.numeric(scope2_emissions), as.numeric(scope3_emissions))
   )
 
   emissions <- emissions %>%
@@ -34,7 +40,7 @@ plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name 
       ymax = cumsum(fraction),
       ymin = c(0, head(ymax, n = -1)),
       label_pos = (ymax + ymin) / 2,
-      label = paste0(Scope, "\n", format(round(Emissions, 0), big.mark = ","))
+      label = paste0(Scope, "\n", format(round(Emissions, 2), big.mark = ","))
     )
 
   total_emissions <- sum(emissions$Emissions)
@@ -47,12 +53,16 @@ plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name 
 
   ggplot(emissions, aes(ymax = ymax, ymin = ymin, xmax = 4, xmin = 3, fill = Scope)) +
     geom_rect() +
-    scale_fill_manual(values = c("Scope 1" = "#2ecc40", "Scope 2" = "#b6eabf")) + # Green and light green
+    scale_fill_manual(values = c(
+      "Scope 1" = "#2ecc40",   # Green
+      "Scope 2" = "#b6eabf",   # Light green
+      "Scope 3" = "#1f77b4"    # Blue
+    )) +
     geom_text(
       aes(
         x = 3.5,
         y = label_pos,
-        label = paste0(label, " kgCO2")
+        label = paste0(label, "")
       ),
       size = 3,
       fontface = "bold"
@@ -70,10 +80,10 @@ plot_sme_emissions <- function(scope1_emissions, scope2_emissions, company_name 
       "text",
       x = 3,  # Center of the donut
       y = 0,
-      label = paste("Total\n", format(round(total_emissions, 0), big.mark = ","), "kgCO2"),
+      label = paste("Total\n", format(round(total_emissions, 2), big.mark = ","), "tCo2e"),
       size = 3,
       fontface = "bold",
       vjust = 3
     ) +
-    labs(title = chart_title, fill = "Emission Scope (kgCO2)")
+    labs(title = chart_title, fill = "Emission Scope (tCo2e)")
 }

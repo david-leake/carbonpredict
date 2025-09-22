@@ -4,23 +4,35 @@
 \alias{plot_sme_emissions}
 \title{Plot SME Emissions}
 \usage{
-plot_sme_emissions(scope1_emissions, scope2_emissions, company_name = NULL)
+plot_sme_emissions(
+  scope1_emissions,
+  scope2_emissions,
+  scope3_emissions,
+  company_name = NULL
+)
 }
 \arguments{
-\item{scope1_emissions}{Numeric value for Scope 1 emissions.}
+\item{scope1_emissions}{Value for Scope 1 emissions (numeric).}
 
-\item{scope2_emissions}{Numeric value for Scope 2 emissions.}
+\item{scope2_emissions}{Value for Scope 2 emissions (numeric).}
 
-\item{company_name}{Optional character string for the company name to include in the chart title.}
+\item{scope3_emissions}{Value for Scope 3 emissions (numeric).}
+
+\item{company_name}{Optional company name to include in the chart title (character string).}
 }
 \value{
-A ggplot2 donut chart.
+A ggplot2 donut chart showing predicted emissions for each scope.
 }
 \description{
-Plot a donut chart of Scope 1 and Scope 2 emissions
+Plot a donut chart of Scope 1,2 and 3 emissions
 }
 \examples{
 scope_1 = sme_scope1(85, 12000000)
 scope_2 = sme_scope2(85, 12000000)
-plot_sme_emissions(scope1_emissions = scope_1$predicted_emissions, scope2_emissions = scope_2$predicted_emissions, company_name = "ABC")
+scope_3 = sme_scope3(85, 12000000)
+plot_sme_emissions(
+scope1_emissions = scope_1$predicted_emissions,
+scope2_emissions = scope_2$predicted_emissions,
+scope3_emissions = scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]]
+company_name = "ABC")
 }
