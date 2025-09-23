@@ -14,7 +14,7 @@ sme_emissions_profile(sic_code, turnover, company_name = NULL)
 \item{company_name}{Optional company name for labeling plots (character string).}
 }
 \value{
-A list with three elements: \code{scope1}, \code{scope2} \code{scope3}, each containing the predicted emissions data frame (in tCo2e), as well as a donut chart.
+A list with four elements: \code{scope1}, \code{scope2} \code{scope3}, \code{scope3_hotspots}, each containing the predicted carbon emissions data frame (in tCo2e), the top 5 scope 3 emissions hotspots, as well as a donut chart and Sankey diagram showing the emissions breakdowns.
 }
 \description{
 Calls the Scope 1, 2 and 3 emissions prediction functions and returns their results as a list and plots a donut chart
