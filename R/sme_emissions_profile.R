@@ -18,14 +18,16 @@ sme_emissions_profile <- function(sic_code, turnover, company_name = NULL) {
 	scope3 <- sme_scope3(sic_code, turnover)
 	list_result <- list(scope1 = scope1, scope2 = scope2, scope3 = scope3)
 
-	print(plot_sme_emissions(scope1$`Predicted Emissions (tCO2e)`, 
-													 scope2$`Predicted Emissions (tCO2e)`,
-													 scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"],
-													 company_name))
+	print(plot_sme_emissions(scope1$`Predicted Emissions (tCO2e)`,
+							 scope2$`Predicted Emissions (tCO2e)`,
+							 scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"],
+							 company_name))
 
-	grid::grid.newpage()
+	if (!interactive()) {
+		grid::grid.newpage()
+	}
 
-	plot_scope3_emissions(scope3, company_name)
+	print(plot_scope3_emissions(scope3, company_name))
 
 	return(list_result)
 }
