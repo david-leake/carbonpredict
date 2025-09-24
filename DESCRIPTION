@@ -15,7 +15,9 @@ Imports:
     ggplot2,
     progress,
     lmerTest,
-    networkD3
+    networkD3,
+    htmltools,
+    htmlwidgets
 Suggests: 
     testthat (>= 3.0.0),
     mockery,

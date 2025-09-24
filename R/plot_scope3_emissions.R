@@ -45,8 +45,6 @@ plot_scope3_emissions <- function(scope3_df, company_name = NULL) {
 
   # Non-interactive: show static image
   if (!interactive()) {
-    library(png)
-    library(grid)
     img_path <- system.file("intdata", "scope3_sankey_example.png", package = "carbonpredict")
     if (file.exists(img_path)) {
       img <- png::readPNG(img_path)
@@ -58,7 +56,7 @@ plot_scope3_emissions <- function(scope3_df, company_name = NULL) {
     }
   }
 
-  sankey <- sankeyNetwork(
+  sankey <- networkD3::sankeyNetwork(
     Links = links,
     Nodes = nodes,
     Source = "source",
