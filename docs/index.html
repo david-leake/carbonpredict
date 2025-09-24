@@ -95,23 +95,35 @@
 <span><span class="co"># Note: all predicted emissions values are in tonnes of Co2e (tCo2e).</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="plot-emissions-for-a-single-sme">Plot emissions for a single SME<a class="anchor" aria-label="anchor" href="#plot-emissions-for-a-single-sme"></a>
+<h3 id="predict-sme-scope-3-emissions-categories-and-hotspots">Predict SME scope 3 emissions categories and hotspots<a class="anchor" aria-label="anchor" href="#predict-sme-scope-3-emissions-categories-and-hotspots"></a>
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">scp1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sme_scope1.html">sme_scope1</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
-<span><span class="va">scp2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/plot_sme_emissions.html">plot_sme_emissions</a></span><span class="op">(</span><span class="va">scp1</span><span class="op">$</span><span class="va">`Predicted Emissions (tCO2e)`</span>, <span class="va">scp2</span><span class="op">$</span><span class="va">`Predicted Emissions (tCO2e)`</span>, <span class="st">"Carbon Predict LTD"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/sme_scope3.html">sme_scope3</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/sme_scope3_hotspots.html">sme_scope3_hotspots</a></span><span class="op">(</span><span class="fl">85</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
-<h3 id="get-a-full-emissions-profile-and-plot">Get a full emissions profile and plot<a class="anchor" aria-label="anchor" href="#get-a-full-emissions-profile-and-plot"></a>
+<h3 id="plot-emissions-for-a-single-sme">Plot emissions for a single SME<a class="anchor" aria-label="anchor" href="#plot-emissions-for-a-single-sme"></a>
 </h3>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Scope 1 and 2</span></span>
+<span><span class="va">scp1</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sme_scope1.html">sme_scope1</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
+<span><span class="va">scp2</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/sme_scope2.html">sme_scope2</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/plot_sme_emissions.html">plot_sme_emissions</a></span><span class="op">(</span><span class="va">scp1</span><span class="op">$</span><span class="va">`Predicted Emissions (tCO2e)`</span>, <span class="va">scp2</span><span class="op">$</span><span class="va">`Predicted Emissions (tCO2e)`</span>, <span class="st">"Carbon Predict LTD"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Scope 3</span></span>
+<span><span class="va">scp3</span> <span class="op">&lt;-</span> <span class="fu">sme_scope</span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/plot_scope3_emissions.html">plot_scope3_emissions</a></span><span class="op">(</span><span class="va">scp3</span>, <span class="st">"Carbon Predict LTD"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level3">
+<h3 id="get-a-full-emissions-profile-and-plots">Get a full emissions profile and plots<a class="anchor" aria-label="anchor" href="#get-a-full-emissions-profile-and-plots"></a>
+</h3>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/sme_emissions_profile.html">sme_emissions_profile</a></span><span class="op">(</span><span class="fl">85</span>, <span class="fl">12000000</span>, <span class="st">"Carbon Predict LTD"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="batch-prediction-from-csv">Batch prediction from CSV<a class="anchor" aria-label="anchor" href="#batch-prediction-from-csv"></a>
 </h3>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Some sample SME data is included in the package for demonstration purposes.</span></span>
 <span><span class="va">sample_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sme_examples.csv"</span>, package <span class="op">=</span> <span class="st">"carbonpredict"</span><span class="op">)</span></span>
 <span><span class="va">results</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/batch_predict_emissions.html">batch_predict_emissions</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sample_data</span>, company_type <span class="op">=</span> <span class="st">"sme"</span>, output_path <span class="op">=</span> <span class="st">"temp/results.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -119,7 +131,7 @@
 <div class="section level3">
 <h3 id="batch-plotting">Batch plotting<a class="anchor" aria-label="anchor" href="#batch-plotting"></a>
 </h3>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sample_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, <span class="st">"sme_examples.csv"</span>, package <span class="op">=</span> <span class="st">"carbonpredict"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/batch_sme_plots.html">batch_sme_plots</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">sample_data</span>, output_path <span class="op">=</span> <span class="st">"temp/plots"</span><span class="op">)</span></span></code></pre></div>
 </div>

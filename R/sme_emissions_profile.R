@@ -13,6 +13,19 @@ library(grid)
 #' @examples
 #' sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "ABC")
 sme_emissions_profile <- function(sic_code, turnover, company_name = NULL) {
+
+	# Read hotspots from CSV to get company industry
+    hotspots <- read.csv(system.file("extdata", "sme_top5_hotspots.csv", package = "carbonpredict"), stringsAsFactors = FALSE)
+    
+	# Check user input
+    if (!(sic_code %in% hotspots$sic_code)) {
+        stop("Please provide a valid 2-digit SIC code")
+    }
+    matched_row <- hotspots[hotspots$sic_code == as.numeric(sic_code), ]
+
+	print(paste0("SME Carbon Emissions Profile for ", company_name))
+    print(paste0("Industry: ", matched_row$sic_name[1]))
+
 	scope1 <- sme_scope1(sic_code, turnover)
 	scope2 <- sme_scope2(sic_code, turnover)
 	scope3 <- sme_scope3(sic_code, turnover)

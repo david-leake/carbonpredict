@@ -51,15 +51,27 @@ sme_scope2(85, 12000000)
 # Note: all predicted emissions values are in tonnes of Co2e (tCo2e).
 ```
 
+### Predict SME scope 3 emissions categories and hotspots
+
+``` r
+sme_scope3(85, 12000000)
+sme_scope3_hotspots(85)
+```
+
 ### Plot emissions for a single SME
 
 ``` r
+# Scope 1 and 2
 scp1 <- sme_scope1(85, 12000000)
 scp2 <- sme_scope2(85, 12000000)
 plot_sme_emissions(scp1$`Predicted Emissions (tCO2e)`, scp2$`Predicted Emissions (tCO2e)`, "Carbon Predict LTD")
+
+# Scope 3
+scp3 <- sme_scope(85, 12000000)
+plot_scope3_emissions(scp3, "Carbon Predict LTD")
 ```
 
-### Get a full emissions profile and plot
+### Get a full emissions profile and plots
 
 ``` r
 sme_emissions_profile(85, 12000000, "Carbon Predict LTD")

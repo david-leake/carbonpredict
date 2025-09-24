@@ -12,7 +12,7 @@
 #' sme_scope3_hotspots(sic_code = 85)
 sme_scope3_hotspots <- function(sic_code) {
 
-    # Read industry variables from CSV
+    # Read hotspots from CSV
     hotspots <- read.csv(system.file("extdata", "sme_top5_hotspots.csv", package = "carbonpredict"), stringsAsFactors = FALSE)
 
     # Check user input
@@ -22,15 +22,16 @@ sme_scope3_hotspots <- function(sic_code) {
 
     matched_row <- hotspots[hotspots$sic_code == as.numeric(sic_code), ]
 
-    result <- c(
-        paste0("Industry: ", matched_row$sic_name[1]),
-        paste0("Top 5 Hotspots:"),
-        paste0("Hotspot 1: ", matched_row$hotspot_1[1]),
-        paste0("Hotspot 2: ", matched_row$hotspot_2[1]),
-        paste0("Hotspot 3: ", matched_row$hotspot_3[1]),
-        paste0("Hotspot 4: ", matched_row$hotspot_4[1]),
-        paste0("Hotspot 5: ", matched_row$hotspot_5[1])
+    results <- data.frame(
+        Hotspot = c(1:5),
+        Description = as.character(c(
+            matched_row$hotspot_1[1],
+            matched_row$hotspot_2[1],
+            matched_row$hotspot_3[1],
+            matched_row$hotspot_4[1],
+            matched_row$hotspot_5[1]
+        )),
+        stringsAsFactors = FALSE
     )
-    return(result)
-
+    return(results)
 }
