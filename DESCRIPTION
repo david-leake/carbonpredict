@@ -5,7 +5,7 @@ Authors@R: c(
     person("Hamza", "Suleman", , "Hamza.Suleman@lloydsbanking.com", role = c("aut", "cre", "cph")),
     person("Alec", "Phillpotts", , "ee21ap@leeds.ac.uk", role = c("ctb", "aut")),
     person("David", "Leake", , "David.Leake@lloydsbanking.com", role = c("ctb", "aut")))
-Description: Predict scope 1, 2 and 3 carbon emissions using pretrained models for UK SMEs as well as predicting scope 3 emissions hotspots.
+Description: Predict scope 1, 2 and 3 carbon emissions and hotspots using pretrained models for UK SMEs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

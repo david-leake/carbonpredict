@@ -34,5 +34,5 @@ plot_sme_emissions(
 scope1_emissions = scope_1$`Predicted Emissions (tCO2e)`,
 scope2_emissions = scope_2$`Predicted Emissions (tCO2e)`,
 scope3_emissions = scope_3[scope_3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]],
-company_name = "ABC")
+company_name = "Carbon Predict LTD")
 }

@@ -19,5 +19,5 @@ Plots a Sankey diagram showing the breakdown of Scope 3 emissions by category.
 }
 \examples{
 scope3_df <- sme_scope3(85, 12000000)
-plot_scope3_emissions(scope3_df, company_name = "ABC")
+plot_scope3_emissions(scope3_df, company_name = "Carbon Predict LTD")
 }

@@ -20,5 +20,5 @@ A list with four elements: \code{scope1}, \code{scope2} \code{scope3}, \code{sco
 Calls the Scope 1, 2 and 3 emissions prediction functions and returns their results as a list and plots a donut chart
 }
 \examples{
-sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "ABC")
+sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "Carbon Predict LTD")
 }

@@ -11,7 +11,7 @@ library(networkD3)
 #' @export
 #' @examples
 #' scope3_df <- sme_scope3(85, 12000000)
-#' plot_scope3_emissions(scope3_df, company_name = "ABC")
+#' plot_scope3_emissions(scope3_df, company_name = "Carbon Predict LTD")
 plot_scope3_emissions <- function(scope3_df, company_name = NULL) {
 
   # Extract total emissions from the 'Total' row

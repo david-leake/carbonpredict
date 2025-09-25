@@ -13,8 +13,8 @@ output: github_document
 
 # Carbon Predict
 
-Carbon Predict is an R package for predicting Scope 1 and Scope 2 carbon emissions for UK SMEs using SIC codes and turnover data. It provides batch prediction, plotting, and workflow tools for carbon accounting and reporting.
-The package utilises pre-trained models, leveraging rich classified transaction data to accurately predict Scope 1 and 2 emissions for UK SMEs.
+Carbon Predict is an R package for predicting Scope 1, 2 and 3 carbon emissions for UK SMEs using SIC codes and annual turnover data. It provides batch prediction, plotting, and workflow tools for carbon accounting and reporting.
+The package utilises pre-trained models, leveraging rich classified transaction data to accurately predict Scope 1, 2 and 3 carbon emissions for UK SMEs as well as identifying emissions hotspots.
 
 The methodology used to produce the estimates in this package is fully detailed in the following peer-reviewed publication:
 
@@ -38,12 +38,17 @@ install.packages("devtools")
 devtools::install_local("carbonpredict")
 ```
 
-## Usage
-
-### Predict emissions for a single SME
+Then load it in as normal:
 
 ```r
 library(carbonpredict)
+```
+
+## Usage
+
+### Predict total scope 1 and 2 emissions for a single SME
+
+```r
 sme_scope1(85, 12000000)
 sme_scope2(85, 12000000)
 # Note: all predicted emissions values are in tonnes of Co2e (tCo2e).
@@ -58,17 +63,22 @@ sme_scope3_hotspots(85)
 ### Plot emissions for a single SME
 
 ```r
-# Scope 1 and 2
 scp1 <- sme_scope1(85, 12000000)
 scp2 <- sme_scope2(85, 12000000)
-plot_sme_emissions(scp1$`Predicted Emissions (tCO2e)`, scp2$`Predicted Emissions (tCO2e)`, "Carbon Predict LTD")
-
-# Scope 3
 scp3 <- sme_scope3(85, 12000000)
+
+# Pie chart showing total emissions for each scope
+plot_sme_emissions(
+   scp1$`Predicted Emissions (tCO2e)`,
+   scp2$`Predicted Emissions (tCO2e)`,
+   scp3[scp3$Category == "Total", "Predicted Emissions (tCO2e)"][[1]],
+   "Carbon Predict LTD")
+
+# Sankey diagram showing scope 3 emissions broken down for each category
 plot_scope3_emissions(scp3, "Carbon Predict LTD")
 ```
 
-### Get a full emissions profile and plots
+### Get a full emissions profile and plots for a single SME
 
 ```r
 sme_emissions_profile(85, 12000000, "Carbon Predict LTD")

@@ -11,7 +11,7 @@ library(grid)
 #' @return A list with four elements: \code{scope1}, \code{scope2} \code{scope3}, \code{scope3_hotspots}, each containing the predicted carbon emissions data frame (in tCo2e), the top 5 scope 3 emissions hotspots, as well as a donut chart and Sankey diagram showing the emissions breakdowns.
 #' @export
 #' @examples
-#' sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "ABC")
+#' sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "Carbon Predict LTD")
 sme_emissions_profile <- function(sic_code, turnover, company_name = NULL) {
 
 	# Read hotspots from CSV to get company industry
