@@ -8,6 +8,7 @@ Authors@R: c(
 Description: Predict scope 1, 2 and 3 carbon emissions and hotspots using pretrained models for UK SMEs.
 License: MIT + file LICENSE
 Encoding: UTF-8
+Depends: R (>= 3.5.0)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
 Imports:
