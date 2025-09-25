@@ -67,7 +67,7 @@ scp2 <- sme_scope2(85, 12000000)
 plot_sme_emissions(scp1$`Predicted Emissions (tCO2e)`, scp2$`Predicted Emissions (tCO2e)`, "Carbon Predict LTD")
 
 # Scope 3
-scp3 <- sme_scope(85, 12000000)
+scp3 <- sme_scope3(85, 12000000)
 plot_scope3_emissions(scp3, "Carbon Predict LTD")
 ```
 
