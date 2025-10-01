@@ -39,7 +39,8 @@ batch_sme_plots <- function(data, output_path = NULL) {
     scope1_val <- as.numeric(row$sme_scope1)
     scope2_val <- as.numeric(row$sme_scope2)
     scope3_val <- as.numeric(row$sme_scope3)
-    print(plot_sme_emissions(scope1_val, scope2_val, scope3_val, ifelse(!is.null(row$company_name) && !is.na(row$company_name), as.character(row$company_name), NULL)))
+    p <- plot_sme_emissions(scope1_val, scope2_val, scope3_val, ifelse(!is.null(row$company_name) && !is.na(row$company_name), as.character(row$company_name), NULL))
+    print(p)
     if (!is.null(output_path)) {
       company_name <- ifelse(!is.null(row$company_name) && !is.na(row$company_name), as.character(row$company_name), paste0("company_", i))
       safe_name <- gsub("[^A-Za-z0-9_]", "_", company_name)
