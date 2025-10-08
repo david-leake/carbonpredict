@@ -11,7 +11,7 @@ batch_predict_emissions(data, output_path = NULL, company_type = "sme")
 
 \item{output_path}{Optional file path to save the results as a CSV. If NULL, results are not saved to a file.}
 
-\item{company_type}{A single parameter "sme" or "farm" to determine which emission prediction funtions to call (defaults to "sme").}
+\item{company_type}{A single parameter "sme" or "farm" to determine which emission prediction functions to call (defaults to "sme").}
 }
 \value{
 A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.

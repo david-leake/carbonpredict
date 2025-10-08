@@ -8,7 +8,7 @@ library(progress)
 #' @importFrom utils read.csv write.csv
 #' @param data A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.
 #' @param output_path Optional file path to save the results as a CSV. If NULL, results are not saved to a file.
-#' @param company_type A single parameter "sme" or "farm" to determine which emission prediction funtions to call (defaults to "sme").
+#' @param company_type A single parameter "sme" or "farm" to determine which emission prediction functions to call (defaults to "sme").
 #' @return A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
 #' @export
 #' @examples
