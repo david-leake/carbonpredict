@@ -9,12 +9,13 @@
 # Carbon Predict
 
 Carbon Predict is an R package for predicting Scope 1, 2 and 3 carbon
-emissions for UK SMEs using SIC codes and annual turnover data. It
-provides batch prediction, plotting, and workflow tools for carbon
-accounting and reporting. The package utilises pre-trained models,
-leveraging rich classified transaction data to accurately predict Scope
-1, 2 and 3 carbon emissions for UK SMEs as well as identifying emissions
-hotspots.
+emissions for UK Small and Medium-sized Enterprises (SMEs), using
+Standard Industrial Classification (SIC) codes and annual turnover data.
+It provides single and batch prediction, plotting, and workflow tools
+for carbon accounting and reporting. The package utilises pre-trained
+models, leveraging rich classified transaction data to accurately
+predict Scope 1, 2 and 3 carbon emissions for UK SMEs as well as
+identifying emissions hotspots.
 
 The methodology used to produce the estimates in this package is fully
 detailed in the following peer-reviewed publication:
