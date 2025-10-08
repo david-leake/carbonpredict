@@ -10,7 +10,7 @@ sme_scope3_hotspots(sic_code)
 \item{sic_code}{A 2-digit UK SIC code (numeric).}
 }
 \value{
-A data frame with the top 5 emissions hostposts for scope 3.
+A data frame with the top 5 emissions hotspots for scope 3.
 }
 \description{
 This function uses pre-computed results to predict the top 5 scope 3 carbon emissions hotspots for a given SIC code.

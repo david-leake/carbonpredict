@@ -6,7 +6,7 @@
 #'
 #' @importFrom utils read.csv
 #' @param sic_code A 2-digit UK SIC code (numeric).
-#' @return A data frame with the top 5 emissions hostposts for scope 3.
+#' @return A data frame with the top 5 emissions hotspots for scope 3.
 #' @export
 #' @examples
 #' sme_scope3_hotspots(sic_code = 85)
