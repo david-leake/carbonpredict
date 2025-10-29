@@ -17,7 +17,7 @@ batch_predict_emissions(data, output_path = NULL, company_type = "sme")
 A data frame with input columns and predicted emissions for each scope (in tCo2e). Optionally saved to a CSV file.
 }
 \description{
-Prediction entry point for batch SME and agriculture emissions
+Prediction entry point for batch SME and Farms emissions
 }
 \examples{
 sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))

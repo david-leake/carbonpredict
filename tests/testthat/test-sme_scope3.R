@@ -2,7 +2,7 @@ library(carbonpredict)
 
 # Load validation data
 validation_data <- read.csv(
-  system.file("intdata", "validation_data.csv", package = "carbonpredict"),
+  system.file("intdata", "sme_validation_data.csv", package = "carbonpredict"),
   stringsAsFactors = FALSE
 )
 

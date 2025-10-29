@@ -2,6 +2,7 @@
 
 export(batch_predict_emissions)
 export(batch_sme_plots)
+export(farms_scope1)
 export(plot_scope3_emissions)
 export(plot_sme_emissions)
 export(sme_emissions_profile)

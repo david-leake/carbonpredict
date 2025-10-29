@@ -1,0 +1,197 @@
+
+R version 4.5.1 (2025-06-13 ucrt) -- "Great Square Root"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "carbonpredict"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> options(pager = "console")
+> base::assign(".ExTimings", "carbonpredict-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('carbonpredict')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("batch_predict_emissions")
+> ### * batch_predict_emissions
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: batch_predict_emissions
+> ### Title: Batch Predict Emissions
+> ### Aliases: batch_predict_emissions
+> 
+> ### ** Examples
+> 
+> sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
+> sample_data <- head(sample_data, 3)
+> batch_predict_emissions(data = sample_data, company_type = "sme", output_path = NULL)
+                 company_name sic_code turnover sme_scope1 sme_scope2
+1 Abdur's Abnormal Algorithms       87  3098836   200.8262   91.43155
+2      Ajit's Jetpack Rentals       88 20500387   454.1878  247.27183
+3     Alex's Axolotl Emporium       74 13297747   111.3805   65.14319
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("batch_predict_emissions", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("batch_sme_plots")
+> ### * batch_sme_plots
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: batch_sme_plots
+> ### Title: Batch SME Plots
+> ### Aliases: batch_sme_plots
+> 
+> ### ** Examples
+> 
+> sample_data <- read.csv(system.file("extdata", "sme_examples.csv", package = "carbonpredict"))
+> sample_data <- head(sample_data, 3)
+> batch_sme_emissions <- batch_predict_emissions(
++ data = sample_data,
++ company_type = "sme",
++ output_path = NULL)
+> batch_sme_plots(data = batch_sme_emissions, output_path = NULL)
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("batch_sme_plots", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("plot_sme_emissions")
+> ### * plot_sme_emissions
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: plot_sme_emissions
+> ### Title: Plot SME Emissions
+> ### Aliases: plot_sme_emissions
+> 
+> ### ** Examples
+> 
+> scope_1 = sme_scope1(85, 12000000)
+> scope_2 = sme_scope2(85, 12000000)
+> plot_sme_emissions(
++ scope1_emissions = scope_1$predicted_emissions,
++ scope2_emissions = scope_2$predicted_emissions,
++ company_name = "ABC")
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("plot_sme_emissions", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("sme_emissions_profile")
+> ### * sme_emissions_profile
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: sme_emissions_profile
+> ### Title: SME Emissions Profile
+> ### Aliases: sme_emissions_profile
+> 
+> ### ** Examples
+> 
+> sme_emissions_profile(sic_code = 85, turnover = 12000000, company_name = "ABC")
+$scope1
+  SIC_2_2007 lbg_turnover predicted_emissions
+1         85      1.2e+07             376.646
+
+$scope2
+  SIC_2_2007 lbg_turnover predicted_emissions
+1         85      1.2e+07             234.891
+
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("sme_emissions_profile", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("sme_scope1")
+> ### * sme_scope1
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: sme_scope1
+> ### Title: Predict SME Scope 1 Emissions
+> ### Aliases: sme_scope1
+> 
+> ### ** Examples
+> 
+> sme_scope1(sic_code = 85, turnover = 12000000)
+  SIC_2_2007 lbg_turnover predicted_emissions
+1         85      1.2e+07             376.646
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("sme_scope1", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("sme_scope2")
+> ### * sme_scope2
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: sme_scope2
+> ### Title: Predict SME Scope 2 Emissions
+> ### Aliases: sme_scope2
+> 
+> ### ** Examples
+> 
+> sme_scope2(sic_code = 85, turnover = 12000000)
+  SIC_2_2007 lbg_turnover predicted_emissions
+1         85      1.2e+07             234.891
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("sme_scope2", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  4.8 0.41 5.36 NA NA 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

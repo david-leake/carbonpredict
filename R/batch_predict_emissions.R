@@ -3,7 +3,7 @@ library(progress)
 
 #' Batch Predict Emissions
 #'
-#' Prediction entry point for batch SME and agriculture emissions
+#' Prediction entry point for batch SME and Farms emissions
 
 #' @importFrom utils read.csv write.csv
 #' @param data A single entry (list or named vector), a data frame, or a path to a CSV file. The data should contain company_name, 2-digit UK sic_code, and annual turnover columns.
@@ -24,15 +24,16 @@ batch_predict_emissions <- function(data, output_path = NULL, company_type = "sm
     data <- as.data.frame(list(data), stringsAsFactors = FALSE)
   } 
 
-  if (!all(c("sic_code", "turnover") %in% colnames(data))) {
-    stop("Input must have columns 'sic_code' and 'turnover'")
-  }
-
   if (company_type == "sme") {
+    if (!all(c("sic_code", "turnover") %in% colnames(data))) {
+    stop("Input must have columns 'sic_code' and 'turnover'")
+    }
     emission_functions <- c("sme_scope1", "sme_scope2", "sme_scope3")
   } else if (company_type == "farm") {
-    # emission_functions <- c("agri_scope1")
-    stop("Agriculture emissions predictions coming soon!")
+    if (!all(c("sic_code", "farm_area", "no_beef_cows", "no_dairy_cows", "no_pigs", "no_sheep", "annual_revenue", "annual_fuel_spend") %in% colnames(data))) {
+    stop("Input must have columns 'sic_code', 'farm_area', 'no_beef_cows', 'no_dairy_cows', 'no_pigs', 'no_sheep', 'annual_revenue', 'annual_fuel_spend'")
+    }
+    emission_functions <- c("farms_scope1")
   } else {
     stop("Please enter a valid company type ('sme' or 'farm')")
   }
@@ -48,14 +49,17 @@ batch_predict_emissions <- function(data, output_path = NULL, company_type = "sm
     res <- as.list(row)
     for (fn in emission_functions) {
       pred <- tryCatch({
-        if (fn == "sme_scope3") {
+        if (company_type == "farm") {
+          out <- get(fn)(row$sic_code, row$farm_area, row$no_beef_cows, row$no_dairy_cows, row$no_pigs, row$no_sheep, row$annual_revenue, row$annual_fuel_spend)
+          if ("Predicted Emissions (tCO2e)" %in% names(out)) as.numeric(out[["Predicted Emissions (tCO2e)"]][[1]]) else as.numeric(out)
+        }
+        else if (fn == "sme_scope3") {
           scope3 <- get(fn)(row$sic_code, row$turnover)
           val <- NA
           if (is.data.frame(scope3) && "Category" %in% names(scope3) && any(scope3$Category == "Total")) {
             val <- scope3[scope3$Category == "Total", "Predicted Emissions (tCO2e)"]
             if (length(val) > 0) val <- as.numeric(val[[1]])
           }
-          val
         } else {
           out <- get(fn)(row$sic_code, row$turnover)
           if ("Predicted Emissions (tCO2e)" %in% names(out)) as.numeric(out[["Predicted Emissions (tCO2e)"]][[1]]) else as.numeric(out)
