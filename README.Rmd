@@ -29,11 +29,11 @@ Phillpotts, A., Owen, A., Norman, J., Trendl, A.,  Gathergood, J., Jobst, Norber
 
 Phillpotts, A., Owen, A., Norman, J., Trendl, A.,  Gathergood, J., Jobst, Norbert., Leake, D., 2025. Completing the SME Carbon Profile: Scalabe Prediction of Scope 3 Emissions. _(In Review)_
 
-Wells, J., Trendl, A., Owen, A., Barrett, J., Gridley, J., Jobst, N., Leake, D., 2025. A Scalable Tool for Farm-Level Carbon Accounting: Evidence from UK Agriculture. _(In Review)_
+Wells, J., Trendl, A., Owen, A., Barrett, J., Gridley, J., Jobst, N., Leake, D., 2025. A Scalable Tool for Farm-Level Carbon Accounting: Evidence from UK Agriculture. https://doi.org/10.1088/1748-9326/ae20ab.
 
 ## Installation
 
-You can install the package from CRAN _(Available now!)_:
+You can install the package from CRAN [_(Available now!)_](https://cran.r-project.org/package=carbonpredict):
 
 ```r
 install.packages("carbonpredict")

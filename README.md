@@ -34,11 +34,13 @@ Prediction of Scope 3 Emissions. *(In Review)*
 
 Wells, J., Trendl, A., Owen, A., Barrett, J., Gridley, J., Jobst, N.,
 Leake, D., 2025. A Scalable Tool for Farm-Level Carbon Accounting:
-Evidence from UK Agriculture. *(In Review)*
+Evidence from UK Agriculture.
+<https://doi.org/10.1088/1748-9326/ae20ab>.
 
 ## Installation
 
-You can install the package from CRAN *(Available now!)*:
+You can install the package from CRAN [*(Available
+now!)*](https://cran.r-project.org/package=carbonpredict):
 
 ``` r
 install.packages("carbonpredict")
